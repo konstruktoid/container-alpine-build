@@ -17,7 +17,10 @@ commit you saw it on.
 
 ## Scope
 
-Vulnerabilities in the packages this image installs belong upstream, with the
-distribution or the project itself. What is in scope here is how this repository
-builds and configures the image: the `Dockerfile`, the shipped configuration,
-the entry point scripts and the GitHub Actions workflows.
+Report vulnerabilities in the packages this image installs upstream, to the
+distribution or the project itself. If a vulnerable package is present in a
+published image, report the affected image digest here as well, so the image can
+be rebuilt once a fix is available.
+
+What is in scope here is how this repository builds and configures the image:
+the `Dockerfile`, the pinned base image digest and the GitHub Actions workflows.

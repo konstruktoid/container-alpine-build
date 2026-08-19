@@ -3,7 +3,11 @@
 An [Alpine Linux](https://www.alpinelinux.org) base image, just to keep it patched.
 
 The upstream `alpine:latest` tag is pinned by digest in the `Dockerfile` and bumped
-by Renovate, so every rebuild is reproducible and every bump is reviewable.
+by Dependabot, so every base image bump is reviewable. The build then runs
+`apk --no-cache upgrade` against the current Alpine package index, so the
+installed package versions depend on when the image is built and two builds from
+the same commit are not byte for byte identical. That is the point: the pinned
+digest makes the base reviewable, the upgrade keeps the packages patched.
 
 The image is rebuilt and pushed to
 [konstruktoid/alpine](https://hub.docker.com/r/konstruktoid/alpine) on a
